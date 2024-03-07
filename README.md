@@ -32,5 +32,5 @@ python train_2D.py --score_model flow --dataset BraTS --project_layer 0 --prepro
 python train_3D.py
 ```
 
-- Using feature extractor fine-tuned on EDC
+- Using feature extractor fine-tuned on EDC.
 Please use the code from original paper [EDC](https://github.com/guojiajeremy/edc), get the state_dict of the encoder and save it as './../results/MRI_EDC/best_encoder.pth'.
