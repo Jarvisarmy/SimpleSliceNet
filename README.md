@@ -1,6 +1,3 @@
-## [Efficient Slice Anomaly Detection Network for 3D brain MRI Volume]
-
-PyTorch implementation for paper, Efficient Slice Anomaly Detection Network for 3D brain MRI Volume.
 
 ## Download Datasets
 
