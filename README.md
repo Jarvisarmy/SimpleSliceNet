@@ -33,3 +33,7 @@ python train_3D.py
 Please use the code from original paper [EDC](https://github.com/guojiajeremy/edc), get the state_dict of the encoder and save it as './../results/MRI_EDC/best_encoder.pth'.
  ## Pre-processing
  - [src/data_utils.py](src/data_utils.py) contains code for brain extraction, volume registered and converting volumes to slices. As mentioned in paper, we use [HD-BET](https://github.com/MIC-DKFZ/HD-BET) to skull-tripped and use [Flirt](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT) to registered brain MRI volumes.
+ - function [brain_extraction] is used to perform brain extraction using HD-BET
+ - function [registered_nii_IXI] is used to registered the volumes from IXI to standard template
+ - function [registered_nii_BraTS] is used to registered the volumes from BraTS to standard template
+ - function [load_slices_for_3D] is used convert each volume to slices and stored in folder BraTS2D which is used to trained 2D methods.
