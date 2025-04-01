@@ -5,8 +5,9 @@ Please download MVtecAD dataset from [MVTecAD dataset](https://www.mvtec.com/com
 
 ## Files and Tools Setup
 - Using feature extractor fine-tuned on EDC.
-Please use the code from original paper [EDC](https://github.com/guojiajeremy/edc), get the state_dict of the encoder and save it as './../results/MRI_EDC/best_encoder.pth'.
-- As mentioned in paper, we use [HD-BET](https://github.com/MIC-DKFZ/HD-BET) to skull-tripped and use [Flirt](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT) to registered brain MRI volumes. Please download the MRI preprocessing tool follow the description from the source website.
+ Please use the code from original paper [EDC](https://github.com/guojiajeremy/edc), get the state_dict of the encoder and save it as './../results/MRI_EDC/best_encoder.pth'. You can also contact us for inquiring our saved state dict.
+
+- As mentioned in paper, we use [HD-BET](https://github.com/MIC-DKFZ/HD-BET) to skull-tripped and use [Flirt](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT) to registered brain MRI volumes. Please download the MRI preprocessing tool follow the description from the source website.  These tools are download in the parent directory of this repository, if you download it elsewhere, you might need to change some code in the [src/data_utils.py](src/data_utils.py) to make sure the pre-processing code works.
 
 ## Pre-processing
  - [src/data_utils.py](src/data_utils.py) contains code for brain extraction, volume registered and converting volumes to slices. 
@@ -34,12 +35,12 @@ python train_2D.py --score_model disc --dataset BraTS --proj_layers 1 --preproce
 
 - Run code for 2D training BraTS2021 with our model SimpleSliceNet
 ```
-python train_2D.py --score_model flow --dataset BraTS --project_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08
+python train_2D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
 ```
 
 - Run code for 3D training BraTS2021 with our model SimpleSliceNet
 ```
-python train_3D.py
+python train_3D.py --score_model flow --dataset --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
 ```
 
 

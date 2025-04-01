@@ -10,6 +10,7 @@ import os
 import nibabel as nib
 import numpy as np
 import torch
+import argparse
 
 from nii_utils import crop_3d_volume_to_size
 
@@ -203,4 +204,18 @@ def registered_nii_BraTS(base_template, data_root, data_folder, mask_folder):
             os.system(mask_registered_command)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process input and output directories.")
+    parser.add_argument('--data_base_dir', type=str, required=True, help="Path to the data base directory")
+    args = parser.parse_args()
+    IXIT1_path = os.path.join(args.data_base_dir, 'IXI-T1')
+    IXIT2_path = os.path.join(args.data_base_dir, 'IXIT2')
+    BraTS_path = os.path.join(args.data_base_dir, 'BraTS2021')
+    # step 1: perform brain extraction: skull-stripped
+    print(('-------------------- brain extraction on IXIT1 --------------------'))
+    brain_extraction(IXIT1_path, )
+
+
+    print(('-------------------- brain extraction on IXIT1 --------------------'))
+    
+    
     load_slices_from_BraTS("./../data")
