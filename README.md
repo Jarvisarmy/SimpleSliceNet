@@ -12,10 +12,13 @@ Please download MVtecAD dataset from [MVTecAD dataset](https://www.mvtec.com/com
 ## Pre-processing
  - [src/data_utils.py](src/data_utils.py) contains code for brain extraction, volume registered and converting volumes to slices. 
  - function [brain_extraction] is used to perform brain extraction using HD-BET
- - function [registered_nii_IXI] is used to registered the volumes from IXI to standard template
+ - function [registered_nii_IXIT2] is used to registered the volumes from IXI to standard template
  - function [registered_nii_BraTS] is used to registered the volumes from BraTS to standard template
  - function [load_slices_for_3D] is used convert each volume to slices and stored in folder BraTS2D which is used to trained 2D methods.
-
+You can directly run the script below to preprocess the data. Just make sure that under your data root directory, the IXI T1 volumes are saved in a folder named "IXI-T1", the IXI T2 volumes in "IXI-T2", and the BraTS2021 data in "BraTS2021". The script will automatically create two folders, "T1" and "T2", under the root path and save all preprocessed data into them.
+```
+python data_utils.py --data_base_dir \path\to\data\root
+```
 
 ## Training
 - Run code for 2D training MVTecAD with SimpleNet
