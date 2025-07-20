@@ -43,7 +43,7 @@ python train_2D.py --score_model flow --dataset BraTS --proj_layer 0 --preproces
 
 - Run code for 3D training BraTS2021 with our model SimpleSliceNet
 ```
-python train_3D.py --score_model flow --dataset --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
+python train_3D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
 ```
 
 
