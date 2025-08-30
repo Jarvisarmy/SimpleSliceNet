@@ -23,27 +23,27 @@ python data_utils.py --data_base_dir \path\to\data\root
 ## Training
 - Run code for 2D training MVTecAD with SimpleNet
 ```
-python train_2D.py --score_model disc --dataset MVTec --class_name screw --proj_layers 1 --preprocessing_dimension 1536 --target_embed_dimension 1536 --noise_std 0.015
+python train_2D.py --score_model disc --dataset MVTec --class_name screw --proj_layers 1 --preprocessing_dimension 1536 --target_embed_dimension 1536 --noise_std 0.015 --use_gpu
 ```
 
 - Run code for 2D training MVTecAD with our model SimpleSliceNet
 ```
-python train_2D.py --score_model flow --dataset MVTec --proj_layers 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08
+python train_2D.py --score_model flow --dataset MVTec --proj_layers 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --use_gpu
 ```
 
 - Run code for 2D training BraTS2021 with SimpleNet
 ```
-python train_2D.py --score_model disc --dataset BraTS --proj_layers 1 --preprocessing_dimension 1536 --target_embed_dimension 1536 --noise_std 0.08
+python train_2D.py --score_model disc --dataset BraTS --proj_layers 1 --preprocessing_dimension 1536 --target_embed_dimension 1536 --noise_std 0.08 --use_gpu
 ```
 
 - Run code for 2D training BraTS2021 with our model SimpleSliceNet
 ```
-python train_2D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
+python train_2D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc --use_gpu
 ```
 
 - Run code for 3D training BraTS2021 with our model SimpleSliceNet
 ```
-python train_3D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc
+python train_3D.py --score_model flow --dataset BraTS --proj_layer 0 --preprocessing_dimension 512 --target_embed_dimension 512 --noise_std 0.08 --edc --use_gpu
 ```
 
 
