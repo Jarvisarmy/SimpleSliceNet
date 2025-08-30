@@ -107,7 +107,7 @@ if __name__ == '__main__':
     # learning rate
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--dsc_lr", type=float, default=2*1e-4)
-    args = parser.parse_args(["--use_gpu"])
+    args = parser.parse_args()
     main(args)
     # run1: simple noise with edc
     # I_auroc: 0.7494501841243862, 
